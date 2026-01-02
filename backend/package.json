@@ -1,5 +1,5 @@
 {
-  "name": "qarhami-udp-backend",
+  "name": "qarhami-udp-tester-api",
   "version": "1.0.0",
   "type": "module",
   "description": "Backend server for UDP packet dispatching with load balancing",
@@ -13,6 +13,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.2.1",
+    "mongoose": "^8.0.0",
     "nodemon": "^3.1.11"
   },
   "devDependencies": {

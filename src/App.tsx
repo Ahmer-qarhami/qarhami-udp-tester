@@ -11,7 +11,9 @@ interface LogEntry {
 }
 
 function App() {
-  const [host, setHost] = useState("localhost");
+  const [host, setHost] = useState(
+    import.meta.env.VITE_UDP_SERVER_HOST || "localhost"
+  );
   const [csvData, setCsvData] = useState<string[][]>([]);
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState("");
@@ -19,7 +21,9 @@ function App() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const isSendingRef = useRef(false);
   const logIdCounterRef = useRef(0);
-  const API_URL = "http://localhost:9490/api";
+  const API_URL =
+    import.meta.env.VITE_API_BASE_URL ||
+    "https://api-udp-tester.qarhami.com/api";
 
   // Handle CSV file upload
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {

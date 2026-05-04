@@ -19,12 +19,16 @@ sudo docker rmi -f ahmernajam/qarhami-udp-tester-api:latest
 # --Pulling of Latest Release--
 
 sudo docker pull ahmernajam/qarhami-udp-tester-api:latest
-sudo docker run --name qarhami-udp-tester-api-v1 -p 9490:9490 -itd ahmernajam/qarhami-udp-tester-api:latest
+sudo docker run --name qarhami-udp-tester-api-v1 --network qarhami-network -p 9490:9490 -itd ahmernajam/qarhami-udp-tester-api:latest
 
 # --Auto start on Restart
 
 sudo docker update --restart=always qarhami-udp-tester-api-v1
 sudo docker logs qarhami-udp-tester-api-v1
+
+## INSPECT NETWORK
+
+docker network inspect qarhami-network
 
 # --Optional Checking Commands
 

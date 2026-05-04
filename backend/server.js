@@ -46,9 +46,9 @@ connectMongoDB().catch((err) => {
 
 app.use(
   cors({
-    origin: "https://udp-tester.qarhami.com",
+    origin: "*", // Allow all origins for testing
     methods: ["GET", "POST", "PUT", "DELETE"],
-  })
+  }),
 );
 app.use(express.json());
 
